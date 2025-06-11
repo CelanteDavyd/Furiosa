@@ -2,11 +2,10 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Furiosa 💖</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
     * {
       margin: 0;
       padding: 0;
@@ -24,10 +23,11 @@
       height: 100vh;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 10px;
     }
 
-    .stars::before, .stars::after {
+    .stars::before,
+    .stars::after {
       content: '';
       position: absolute;
       width: 2px;
@@ -46,7 +46,8 @@
     }
 
     .stars::before {
-      left: 10%; top: 20%;
+      left: 10%;
+      top: 20%;
       box-shadow:
         20px 30px white,
         60px 100px white,
@@ -60,7 +61,8 @@
     }
 
     .stars::after {
-      left: 50%; top: 60%;
+      left: 50%;
+      top: 60%;
       box-shadow:
         30px 50px white,
         80px 120px white,
@@ -74,8 +76,13 @@
     }
 
     @keyframes twinkle {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.2;
+      }
     }
 
     .comet {
@@ -89,9 +96,17 @@
     }
 
     @keyframes comet {
-      0% { transform: translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateX(120vw); opacity: 0; }
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(120vw);
+        opacity: 0;
+      }
     }
 
     .photo {
@@ -109,36 +124,42 @@
     .message {
       font-size: 2rem;
       max-width: 90%;
-      border-right: 2px solid white;
       overflow: hidden;
-      white-space: normal; /* Permitir quebra de linha */
-      animation: typing 10s steps(80, end), blink-caret 0.75s step-end infinite;
+      border-right: 2px solid white;
+      animation: typing 8s steps(60, end), blink-caret 0.75s step-end infinite;
       z-index: 1;
-      line-height: 1.4;
+      white-space: normal; /* permite quebra de linha no texto */
       margin: 0 auto;
-      word-wrap: break-word;
-      text-align: center;
+      line-height: 1.4;
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
     }
 
     @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: white; }
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: white;
+      }
     }
 
-    /* Responsividade para celular */
+    /* Ajuste para telas pequenas */
     @media (max-width: 480px) {
       .message {
-        font-size: 1.4rem;
-        animation: typing 12s steps(100, end), blink-caret 0.75s step-end infinite;
+        font-size: 1.2rem;
+        animation: typing 8s steps(40, end), blink-caret 0.75s step-end infinite;
       }
-
       .photo img {
-        width: 90vw;
+        width: 180px;
       }
     }
   </style>
