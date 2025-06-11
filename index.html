@@ -2,10 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Furiosa 💖</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -13,7 +14,7 @@
     }
 
     body {
-      background: black;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       overflow: hidden;
       font-family: 'Great Vibes', cursive;
       display: flex;
@@ -23,143 +24,97 @@
       height: 100vh;
       color: white;
       text-align: center;
-      padding: 10px;
-    }
-
-    .stars::before,
-    .stars::after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 2s infinite;
+      position: relative;
     }
 
     .stars {
       position: absolute;
       width: 100%;
       height: 100%;
+      background: transparent;
       pointer-events: none;
       z-index: 0;
     }
 
+    .stars::before, .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
     .stars::before {
-      left: 10%;
-      top: 20%;
       box-shadow:
-        20px 30px white,
-        60px 100px white,
-        150px 80px white,
-        300px 200px white,
-        500px 300px white,
-        700px 400px white,
-        900px 100px white,
-        1100px 250px white,
-        1300px 350px white;
+        20vw 10vh white,
+        40vw 50vh white,
+        60vw 30vh white,
+        80vw 70vh white,
+        90vw 20vh white,
+        10vw 80vh white,
+        30vw 90vh white;
     }
 
     .stars::after {
-      left: 50%;
-      top: 60%;
       box-shadow:
-        30px 50px white,
-        80px 120px white,
-        180px 100px white,
-        320px 230px white,
-        520px 330px white,
-        740px 430px white,
-        960px 130px white,
-        1140px 270px white,
-        1340px 370px white;
+        25vw 15vh white,
+        45vw 55vh white,
+        65vw 35vh white,
+        85vw 75vh white,
+        95vw 25vh white,
+        15vw 85vh white,
+        35vw 95vh white;
     }
 
     @keyframes twinkle {
-      0%,
-      100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.2;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     .comet {
-      background: radial-gradient(white, transparent);
+      position: absolute;
+      top: 10%;
+      left: -200px;
       width: 200px;
       height: 2px;
-      top: 30%;
-      left: -200px;
-      position: absolute;
+      background: linear-gradient(to right, white, transparent);
       animation: comet 5s linear infinite;
+      z-index: 0;
     }
 
     @keyframes comet {
-      0% {
-        transform: translateX(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(120vw);
-        opacity: 0;
-      }
+      0% { transform: translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateX(120vw); opacity: 0; }
     }
 
     .photo {
-      margin-bottom: 20px;
       z-index: 1;
+      margin-bottom: 20px;
     }
 
     .photo img {
       width: 250px;
-      max-width: 90vw;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
     .message {
       font-size: 2rem;
       max-width: 90%;
-      overflow: hidden;
-      border-right: 2px solid white;
-      animation: typing 8s steps(60, end), blink-caret 0.75s step-end infinite;
       z-index: 1;
-      white-space: normal; /* permite quebra de linha no texto */
-      margin: 0 auto;
-      line-height: 1.4;
     }
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes blink-caret {
-      from,
-      to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: white;
-      }
-    }
-
-    /* Ajuste para telas pequenas */
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       .message {
-        font-size: 1.2rem;
-        animation: typing 8s steps(40, end), blink-caret 0.75s step-end infinite;
+        font-size: 1.5rem;
+        padding: 0 10px;
       }
+
       .photo img {
-        width: 180px;
+        width: 200px;
       }
     }
   </style>
@@ -168,10 +123,12 @@
   <div class="stars"></div>
   <div class="comet"></div>
   <div class="photo">
-    <img src="foto.jpg" alt="Foto do casal" />
+    <img src="foto.jpg" alt="Foto do casal">
   </div>
   <div class="message">
     Desde que você chegou, meu universo nunca mais foi o mesmo. Hoje, te dou uma galáxia, porque nem todas as estrelas do céu brilham tanto quanto você.
   </div>
 </body>
 </html>
+
+
