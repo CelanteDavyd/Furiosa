@@ -1,133 +1,153 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Furiosa 💖</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-body {
-  background: black;
-  overflow: hidden;
-  font-family: 'Great Vibes', cursive;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: white;
-  text-align: center;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.stars::before, .stars::after {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle 2s infinite;
-}
+    body {
+      background: black;
+      overflow: hidden;
+      font-family: 'Great Vibes', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-.stars {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
+    .stars::before, .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite;
+    }
 
-.stars::before {
-  left: 10%; top: 20%;
-  box-shadow:
-    20px 30px white,
-    60px 100px white,
-    150px 80px white,
-    300px 200px white,
-    500px 300px white,
-    700px 400px white,
-    900px 100px white,
-    1100px 250px white,
-    1300px 350px white;
-}
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.stars::after {
-  left: 50%; top: 60%;
-  box-shadow:
-    30px 50px white,
-    80px 120px white,
-    180px 100px white,
-    320px 230px white,
-    520px 330px white,
-    740px 430px white,
-    960px 130px white,
-    1140px 270px white,
-    1340px 370px white;
-}
+    .stars::before {
+      left: 10%; top: 20%;
+      box-shadow:
+        20px 30px white,
+        60px 100px white,
+        150px 80px white,
+        300px 200px white,
+        500px 300px white,
+        700px 400px white,
+        900px 100px white,
+        1100px 250px white,
+        1300px 350px white;
+    }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
+    .stars::after {
+      left: 50%; top: 60%;
+      box-shadow:
+        30px 50px white,
+        80px 120px white,
+        180px 100px white,
+        320px 230px white,
+        520px 330px white,
+        740px 430px white,
+        960px 130px white,
+        1140px 270px white,
+        1340px 370px white;
+    }
 
-.comet {
-  background: radial-gradient(white, transparent);
-  width: 200px;
-  height: 2px;
-  top: 30%;
-  left: -200px;
-  position: absolute;
-  animation: comet 5s linear infinite;
-}
+    @keyframes twinkle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
 
-@keyframes comet {
-  0% { transform: translateX(0); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateX(120vw); opacity: 0; }
-}
+    .comet {
+      background: radial-gradient(white, transparent);
+      width: 200px;
+      height: 2px;
+      top: 30%;
+      left: -200px;
+      position: absolute;
+      animation: comet 5s linear infinite;
+    }
 
-.photo {
-  margin-bottom: 20px;
-  z-index: 1;
-}
+    @keyframes comet {
+      0% { transform: translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateX(120vw); opacity: 0; }
+    }
 
-.photo img {
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    .photo {
+      margin-bottom: 20px;
+      z-index: 1;
+    }
 
-.message {
-  font-size: 2rem;
-  max-width: 90%;
-  white-space: nowrap;
-  border-right: 2px solid white;
-  overflow: hidden;
-  animation: typing 8s steps(60, end), blink-caret 0.75s step-end infinite;
-  z-index: 1;
-}
+    .photo img {
+      width: 250px;
+      max-width: 90vw;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
+    .message {
+      font-size: 2rem;
+      max-width: 90%;
+      border-right: 2px solid white;
+      overflow: hidden;
+      white-space: normal; /* Permitir quebra de linha */
+      animation: typing 10s steps(80, end), blink-caret 0.75s step-end infinite;
+      z-index: 1;
+      line-height: 1.4;
+      margin: 0 auto;
+      word-wrap: break-word;
+      text-align: center;
+    }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
-}
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
 
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    /* Responsividade para celular */
+    @media (max-width: 480px) {
+      .message {
+        font-size: 1.4rem;
+        animation: typing 12s steps(100, end), blink-caret 0.75s step-end infinite;
+      }
+
+      .photo img {
+        width: 90vw;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="stars"></div>
   <div class="comet"></div>
   <div class="photo">
-    <img src="foto.jpg" alt="Foto do casal">
+    <img src="foto.jpg" alt="Foto do casal" />
   </div>
   <div class="message">
     Desde que você chegou, meu universo nunca mais foi o mesmo. Hoje, te dou uma galáxia, porque nem todas as estrelas do céu brilham tanto quanto você.
